@@ -1,0 +1,36 @@
+F = -lsfml-graphics -lsfml-window -lsfml-system
+S = -std=c++1z
+
+all: game
+game: main.o field.o cell.o interface.o get_array.o player.o entity.o character.o entity_draw.o draw_player.o black_enemy.o red_enemy.o pink_enemy.o draw_BEnemy.o draw_REnemy.o draw_PEnemy.o stuff.o draw_heart.o heart.o coin.o draw_coin.o flower.o draw_flower.o log.o log_console.o log_file.o output.o draw_field.o rules.o ; g++ $(S) main.o field.o cell.o interface.o get_array.o player.o entity.o character.o entity_draw.o draw_player.o black_enemy.o red_enemy.o pink_enemy.o draw_BEnemy.o draw_REnemy.o draw_PEnemy.o stuff.o draw_heart.o heart.o coin.o draw_coin.o flower.o draw_flower.o log.o log_console.o log_file.o output.o draw_field.o rules.o -o main $(F) && make -f Makefile clean
+main.o: ; g++ $(S) -g -c main.cpp $(F)
+field.o: ; g++ $(S) -g -c field.cpp $(F)
+cell.o: ; g++ $(S) -g -c cell.cpp $(F)
+interface.o: ; g++ $(S) -g -c interface.cpp $(F)
+get_array.o: ; g++ $(S) -g -c get_array.cpp $(F)
+player.o: ; g++ $(S) -g -c player.cpp $(F)
+entity.o: ; g++ $(S) -g -c entity.cpp $(F)
+character.o: ; g++ $(S) -g -c character.cpp $(F)
+entity_draw.o: ; g++ $(S) -g -c entity_draw.cpp $(F)
+draw_player.o: ; g++ $(S) -g -c draw_player.cpp $(F)
+draw_enemy.o: ; g++ $(S) -g -c draw_enemy.cpp $(F)
+black_enemy.o: ; g++ $(S) -g -c black_enemy.cpp $(F)
+red_enemy.o: ; g++ $(S) -g -c red_enemy.cpp $(F)
+pink_enemy.o: ; g++ $(S) -g -c pink_enemy.cpp $(F)
+draw_BEnemy.o: ; g++ $(S) -g -c draw_BEnemy.cpp $(F)
+draw_REnemy.o: ; g++ $(S) -g -c draw_REnemy.cpp $(F)
+draw_PEnemy.o: ; g++ $(S) -g -c draw_PEnemy.cpp $(F)
+stuff.o: ; g++ $(S) -g -c stuff.cpp $(F)
+draw_heart.o: ; g++ $(S) -g -c draw_heart.cpp $(F)
+heart.o: ; g++ $(S) -g -c heart.cpp $(F)
+coin.o: ; g++ $(S) -g -c coin.cpp $(F)
+draw_coin.o: ; g++ $(S) -g -c draw_coin.cpp $(F)
+flower.o: ; g++ $(S) -g -c flower.cpp $(F)
+draw_flower.o: ; g++ $(S) -g -c draw_flower.cpp $(F)
+log.o: ; g++ $(S) -g -c log.cpp $(F)
+log_console.o: ; g++ $(S) -g -c log_console.cpp $(F)
+log_file.o: ; g++ $(S) -g -c log_file.cpp $(F)
+output.o: ; g++ $(S) -g -c output.cpp $(F)
+draw_field.o: ; g++ $(S) -g -c draw_field.cpp $(F)
+rules.o: ; g++ $(S) -g -c rules.cpp $(F)
+clean: ; rm -rf *.o
